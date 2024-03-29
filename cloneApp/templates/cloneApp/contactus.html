@@ -1,0 +1,49 @@
+{% extends 'cloneApp/base.html' %}
+{% load static %}
+
+
+{% block title %} Contact Us {% endblock title %}
+
+
+{% block body %}
+
+<section class="team my-5 text center" >
+    <div class="container">
+        <div class="text-center my-3">
+            <h1 data-aos="fade-up" data-aos-offset="200" >Contact Us</h1>
+            <hr class="w-25 m-auto">
+        </div>
+
+        <div class="row shadow-lg p-3 mb-5 bg-white rounded">
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="fade-right" data-aos-offset="200">
+                <h2 class="text-center alert alert-info">We Are On Justdial</h2>
+                <a href="">
+                    <img src="{% static 'cloneApp/images/jd.png'%}" alt="icon" mx-5>
+                </a>
+                <div>
+                    <button type="button" class="btn btn-primary mt-3">See On Justdial</button>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6 col-12" data-aos="fade-left" data-aos-offset="200">
+                <h2 class="text-center alert alert-info">Quick Contact</h2>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{form.as_p}}
+
+                    <div>
+                        <p style="justify-content: center; text-justify: auto;">Details submitted through this form are
+                            confidential. The information therein is used only to contact you to discuss the areas
+                            you've expressed an interest in</p>
+                    </div>
+                    <input type="submit" class="btn btn-success btn-rounded" vlaue="Submit">
+                    <input type="Reset" class="btn btn-danger" vlaue="Reset">
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
